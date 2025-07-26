@@ -1,16 +1,13 @@
 import { Component } from '@angular/core';
+import { Header } from '../components/header/header';
+import { Main } from '../components/main/main';
+import { Footer } from '../components/footer/footer';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [],
+  standalone: true,
+  imports: [Header, Main, Footer],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.css'
 })
-export class LandingPage {
-/**
-   * Maneja el envío del formulario de contacto. Por ahora muestra un mensaje.
-   */
-  onSubmit(): void {
-    alert('¡Gracias por tu mensaje!');
-  }
-}
+export class LandingPage {}
