@@ -3,17 +3,25 @@
   <p>
     ¿Tienes un proyecto interesante o quieres colaborar? ¡Estoy disponible!
   </p>
-  <form (ngSubmit)="onSubmit()">
-    <input type="text" name="nombre" placeholder="Tu nombre" required />
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+    <input
+      type="text"
+      name="nombre"
+      placeholder="Tu nombre"
+      [(ngModel)]="formData.nombre"
+      required
+    />
     <input
       type="email"
       name="email"
       placeholder="Tu correo electrónico"
+      [(ngModel)]="formData.email"
       required
     />
     <textarea
       name="mensaje"
       placeholder="Escribe tu mensaje aquí..."
+      [(ngModel)]="formData.mensaje"
       required
     ></textarea>
     <button type="submit" class="btn btn-primary">Enviar mensaje</button>
